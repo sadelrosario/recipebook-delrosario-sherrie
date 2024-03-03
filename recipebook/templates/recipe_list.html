@@ -8,11 +8,13 @@
 <body>
     <h1> Recipe Book </h1>
     <ul>
-        {% for link in links %}
         <li>
-            <a href="/ledger{{ link }}"> Recipe {{ forloop.counter }}</a>
+            {% for recipe in object_list %}
+            <a href="{{ recipe.get_absolute_url }}">
+                {{ recipe.name }}
+            </a>
+            {% endfor %}
         </li>      
-        {% endfor %}
     </ul>
 </body>
 </html>
