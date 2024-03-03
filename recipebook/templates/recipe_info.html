@@ -7,13 +7,16 @@
 </head>
 <body>
     <h1> Recipe Book </h1>
-    <h3>{{ name }}</h3>
-    askldjfhaklshjfd
+
+    <h3> 
+        {{ object.name }} 
+    </h3>
+hihihi
+   Ingredient.objects.filter(recipe__recipe__name={{object.name}}) 
+
     <ul>
-        {% for ingredient in ingredients %}
-        <li>
-            {{ ingredient.name }} : {{ ingredient.quantity }}
-        </li>
+        {% for ingredient in object.ingredients.all %}
+            <li> {{ ingredient.ingredient.name }} lol </li>
         {% endfor %}
     </ul>
 </body>

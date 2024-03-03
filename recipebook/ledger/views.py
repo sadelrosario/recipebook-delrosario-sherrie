@@ -20,10 +20,8 @@ from django.views.generic.detail import DetailView
 
 class recipe_list(ListView):
     model = Recipe
-    context_object_name = "recipe"
     template_name = "recipe_list.html"
 
 class recipe(DetailView):
-    model = RecipeIngredient
-    
+    model = Recipe
     template_name = "recipe_info.html"

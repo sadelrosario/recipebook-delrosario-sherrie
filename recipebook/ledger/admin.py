@@ -2,11 +2,12 @@ from django.contrib import admin
 from .models import Ingredient, Recipe, RecipeIngredient
 
 # Register your models here.
-class RecipeInLine(admin.StackedInline):
-    model = Recipe
+class RecipeIngreidentsInLine(admin.StackedInline):
+    model = RecipeIngredient
 
-class RecipeIngredients(admin.ModelAdmin):
+class RecipeDetails(admin.ModelAdmin):
     model = Recipe 
-    inlines = [RecipeInLine]
+    inlines = [RecipeIngreidentsInLine]
 
-admin.site.register(RecipeInLine, RecipeIngredients)
+
+admin.site.register(Recipe, RecipeDetails)
