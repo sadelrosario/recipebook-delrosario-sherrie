@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipies</title>
-</head>
-<body>
-    <h1> Recipe Book </h1>
+{% extends "base.html" %}
+
+{% block title %}Recipes{% endblock title %}
+{% block content %}
     {% if request.user.is_authenticated %}
         <h2>Hello {{ request.user.username }}</h2>
         <form action="{% url 'logout' %}" method="POST">
@@ -23,8 +18,6 @@
                     {{ recipe.name }}
                 </a>
             </li> 
-        {% endfor %}
-             
+        {% endfor %}            
     </ul>
-</body>
-</html>
+{% endblock content %}
