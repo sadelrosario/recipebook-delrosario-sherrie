@@ -1,5 +1,5 @@
 recipebook/recipebook/.env
 myeny/
 **/__pycache__
-**/db.sqlite#
+db.sqlite#
 **/.DS_Store

@@ -7,8 +7,16 @@
 </head>
 <body>
     <h1> Recipe Book </h1>
+    {% if request.user.is_authenticated %}
+        <h2>Hello {{ request.user.username }}</h2>
+        <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="SUBMIT">LOGOUT</button>
+        </form>
+    {% else %}
+    <a href="{% url 'login' %}">LOGIN</a>
+    {% endif %}
     <ul>
-        
         {% for recipe in object_list %}
             <li>
                 <a href="{{ recipe.get_absolute_url }}">
