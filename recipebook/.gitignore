@@ -1,5 +1,4 @@
-recipebook/recipebook/.env
-myeny/
+.env
 **/__pycache__
-db.sqlite#
-**/.DS_Store
+db.sqlite3
+.DS_Store
