@@ -8,7 +8,7 @@
 <body>
     <h1> Recipe Book </h1>
     <h3> 
-        {{ object.name }} 
+        {{ object.name }} by {{ object.author }}
     </h3>
 
     <ul>
@@ -16,5 +16,9 @@
             <li> {{ ingredient.quantity }} of {{ ingredient.ingredient.name }} </li>
         {% endfor %}
     </ul>
+    <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button type="SUBMIT">LOGOUT</button>
+    </form>
 </body>
 </html>

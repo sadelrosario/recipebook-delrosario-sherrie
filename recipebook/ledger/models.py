@@ -5,7 +5,7 @@ from django.urls import reverse
 # Create your models here.
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
-    # author = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
